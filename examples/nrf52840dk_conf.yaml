@@ -1,0 +1,41 @@
+
+manufacture: nordic
+
+model: Nordic nRF52840 DK NRF52840
+
+compatible: nordic,nrf52840-dk-nrf52840
+
+soc_compatible: 
+  - nordic,nRF52840-QIAA
+  - nordic,nRF52840
+  - nordic,nRF52
+  - simple-bus
+
+chip_series: 
+  - nrf52
+  - nrf
+
+peripherals:
+  map:
+    p: gpio
+    nvmc: flash-controller
+    cryptocell: cc310
+    wdt: watchdog
+    saadc: adc
+  rename: 
+    twi: i2c
+    uarte: uart
+    adc: saadc
+    edma: dma-controller
+  skip:
+    - spim
+    - spis
+    - twis
+    - twim
+    - lpcomp
+    - swi
+    - fpu
+    - cc_host_rgf
+    - approtect
+    - aar
+

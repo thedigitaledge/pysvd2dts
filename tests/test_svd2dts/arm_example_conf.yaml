@@ -1,0 +1,21 @@
+
+manufacture: arm
+
+model: ARM 32-bit Cortex-M3
+
+compatible: arm,exmale
+
+soc_compatible: 
+  - arm,example
+
+chip_series: 
+  - example
+
+peripherals:
+  swap:
+    TIMER1: LPTIMER1
+    cryptocell: cc310
+  rename: 
+    LPTIMER1: TIMER1
+  skip:
+    - TIMER2

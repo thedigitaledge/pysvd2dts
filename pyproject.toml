@@ -1,0 +1,45 @@
+[project]
+name = "pysvd2dts"
+version = "0.0.1"
+authors = [
+  { name="Christopher West", email="cwest@thedigitaledge.co.uk" },
+]
+description = "Extracts information to generate a Zephyr devicetree from an SVD file"
+readme = "README.rst"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Environment :: Console"
+]
+dependencies = [
+    "pydevicetree>=0.0.12",
+    "pysvd>=0.2.3",
+    "PyYAML>=6.0"
+]
+
+build-backend = "setuptools.build_meta"
+[build-system]
+requires = [
+    "setuptools>=61.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "flake8",
+    "Sphinx"
+]
+
+[project.scripts]
+pysvd2dts = "pysvd2dts.pysvd2dts:main"
+
+[tool.flake8]
+max-line-length = 120
+
+[tool.pytest.ini_options]
+pythonpath = [".", "./pysvd2dts"]
+addopts = "tests --runslow --doctest-modules"
